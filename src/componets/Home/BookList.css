@@ -1,0 +1,46 @@
+#mainDiv{
+ height:450px;
+ width:217px;
+ display: flex;
+ flex-direction: column;
+ justify-content:start;
+ align-items: flex-start;
+ gap:8px;
+ border:2px solid black;
+ background: #f7f5ec;
+}
+.BooklistImage{
+    height: 350px;
+    width: 100%;
+    object-fit:cover;
+}
+
+#addButton{
+height:50px;
+width: 100%;
+background-color: black;
+
+display: flex;
+flex-direction: row;
+justify-content:center;
+align-items: center;
+}
+
+#addButtonstyle{
+  background: none;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+#authorName{
+    font-family:"Arial, Helvetica, sans-serif";
+    font-weight:400;
+    font-style: normal;
+    color: black;
+    margin-left: 8px;
+}
+
+#bookName{
+    margin-left: 8px;
+}
