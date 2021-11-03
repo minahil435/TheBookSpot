@@ -19,12 +19,19 @@ const Home = () => {
     // }, []);
 
     return (
-        <div className = "bookGrid">
+        <div id="homeMainDiv">
+              <div className = "bookGrid">
         
+                <BookList />
+                <BookList />
+
+                <BookList />
+                <BookList />
                 <BookList />
                 <BookList />
                 
         
+              </div>
         </div>
     )
 };
