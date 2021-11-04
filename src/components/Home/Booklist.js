@@ -8,23 +8,19 @@ function Booklist(props) {
         <div id="mainDiv">
             <div id="imagediv">
                 <img className="BooklistImage"
-                    // src={props.item.image}
-                    // alt={props.item.name}
-                    src="images/bookcover.jpeg"
-                    alt="hello"
+                    src={props.item.image}
+                    alt={props.item.title}
                 />
             </div>
             <div id="authorName">
-                {/* props.item.author */}
-                hello
+                {props.item.author}
             </div>
             <div id="bookName">
-                {/* props.item.name */}
-                hello
+                {props.item.title}
             </div>
 
             <div id="addButton">
-                <div><button id="addButtonstyle">Add to bag -$28 </button></div>
+                <div><button id="addButtonstyle">Add to bag -${props.item.price} </button></div>
             </div>
         </div>
 
