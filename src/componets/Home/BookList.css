@@ -40,8 +40,11 @@ align-items: center;
     font-style: normal;
     color: black;
     margin-left: 8px;
+    font-size: small;
 }
 
 #bookName{
     margin-left: 8px;
+    font-weight:normal;
+
 }

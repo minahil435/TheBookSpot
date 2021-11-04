@@ -1,20 +1,61 @@
 const BookList = [
     {
         id: '1',
-        title: "blue Drum Set",
-        description: 'good drums',
-        brand: 'Yamaha',
-        price: 59999,
-        image: 'https://www.yamaha.com/yamahavgn/PIM/Images/19027_12073_1_1200x1200_80813f268e73483818697e99937dbd59.jpg',
+        title: "The Death of Magic",
+        author:"Marisa Mills",
+        price: 28,
+        image: './images/bookcover.jpeg'
     },
     {
-        id: '234',
-        title: "Red Drum Set",
-        description: 'good drums',
-        brand: 'Yamaha',
-        price: 59999,
-        image: 'https://m.media-amazon.com/images/I/61YlBr7OQfS._AC_SL1500_.jpg',
+        id: '2',
+        title: "Harry Potter",
+        author: "J.K. Rowling",
+        price: 20,
+        image: './images/bookcover2.jpeg'
     },
+    {
+        id: '3',
+        title: "The Great Gatsby",
+        author: "F.Scott Fitzgerald",
+        price: 10,
+        image: './images/bookcover3.jpeg'
+    },
+    {
+        id: '4',
+        title: "Solar Bones",
+        author: "Mike McCormack",
+        price: 35,
+        image: './images/bookcover4.jpeg'
+    },
+    {
+        id: '5',
+        title: "A Kingdom of Dreams",
+        author: "Judith McNaught",
+        price: 15,
+        image: './images/bookcover5.jpeg'
+    },
+    {
+        id: '6',
+        title: "The Poppy Wife",
+        author: "Caroline Scott",
+        price: 5,
+        image: './images/bookcover6.jpeg'
+    },
+    {
+        id: '7',
+        title: "A Day Like This",
+        author: "Kelly McNeil",
+        price: 28,
+        image: './images/bookcover7.jpeg'
+    },
+    {
+        id: '8',
+        title: "The Kite Runner",
+        author: "Khaled Hosseini",
+        price: 45,
+        image: './images/bookcover8.jpeg'
+    },
+   
 ];
 
 
@@ -24,8 +65,7 @@ export const fetchProducts = () => new Promise((resolve, reject) => {
     console.log('fetching Data from imaginary products database')
     setTimeout(() => {
         try {
-            // fetchingData from imaginary database
-            resolve(productList)
+            resolve(BookList)
         } catch (error) {
             reject(error);
         }
