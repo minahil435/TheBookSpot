@@ -1,10 +1,14 @@
 import React from "react";
 import "./BookList.css"
+import { useShoppingCart } from '../../context/shoppingCartContext';
 
 function Booklist(props) {
 
-    return (
+    const { addItemToCart, shoppingCart } = useShoppingCart();
+    const { item } = props
+    console.log(shoppingCart)
 
+    return (
         <div id="mainDiv">
             <div id="imagediv">
                 <img className="BooklistImage"
@@ -18,12 +22,12 @@ function Booklist(props) {
             <div id="bookName">
                 {props.item.title}
             </div>
-
             <div id="addButton">
-                <div><button id="addButtonstyle">Add to bag -${props.item.price} </button></div>
+                <div><button id="addButtonstyle"
+                    onClick={() => addItemToCart({ item })}> Add to bag -${props.item.price} </button>
+                </div>
             </div>
         </div>
-
     )
 }
 
