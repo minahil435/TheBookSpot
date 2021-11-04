@@ -1,6 +1,6 @@
-const productList = [
+const BookList = [
     {
-        id: '123',
+        id: '1',
         title: "blue Drum Set",
         description: 'good drums',
         brand: 'Yamaha',
