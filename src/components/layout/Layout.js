@@ -7,8 +7,10 @@ function Layout({ children }) {
   return (
     <>
       <CssBaseline />
-      <Header />
-      <Box>This is the content of the page.</Box>;
+      <Box>
+        <Header />
+        <Box>{children}</Box>;
+      </Box>
     </>
   );
 }

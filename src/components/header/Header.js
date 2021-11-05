@@ -6,7 +6,16 @@ import { IconButton } from "@mui/material";
 function Header() {
   return (
     <>
-      <Box>This is the content of the Header.</Box>
+      <Box style={{ display: "flex" }}>
+        <img
+          src="../../../images/logo.png"
+          alt="The Book Spot Logo"
+          style={{ width: "100px" }}
+        />
+        <IconButton sx={{ width: "100%", height: "100%" }}>
+          <ShoppingBagOutlinedIcon />
+        </IconButton>
+      </Box>
     </>
   );
 }
