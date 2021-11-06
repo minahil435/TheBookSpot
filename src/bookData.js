@@ -55,6 +55,13 @@ const BookList = [
     price: 45,
     image: "./images/bookcover8.jpeg",
   },
+  {
+    id: "9",
+    title: "Jaws",
+    author: "Peter Benchley",
+    price: 10,
+    image: "./images/bookcover9.jpeg",
+  },
 ];
 
 export const fetchProducts = () =>
