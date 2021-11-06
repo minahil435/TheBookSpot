@@ -3,12 +3,14 @@
   align-items: center;
   justify-content:center;
   background: #f7f5ec;
+  /* width: 100%; */
 }
 
 .bookGrid{
     margin-top: 24px;
     display: flex;
-    flex-direction: row;
+    justify-content: space-between;
+    margin: 24px 5%;
     flex-wrap: wrap;
     gap: 24px;
 

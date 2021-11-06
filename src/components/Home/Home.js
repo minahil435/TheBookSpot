@@ -16,20 +16,19 @@ const Home = () => {
   }, []);
 
   return (
-    
     <div id="homeMainDiv">
-      <div id= "homeMainDivWidth">
-      <Layout >
-        <div className="bookGrid">
-          {bookData.length > 0 ? (
-            bookData.map((item, index) => {
-              return <BookList key={item.id} item={item} index={index} />;
-            })
-          ) : (
-            <Spinner />
-          )}
-        </div>
-      </Layout>
+      <div id="homeMainDivWidth">
+        <Layout>
+          <div className="bookGrid">
+            {bookData.length > 0 ? (
+              bookData.map((item, index) => {
+                return <BookList key={item.id} item={item} index={index} />;
+              })
+            ) : (
+              <Spinner />
+            )}
+          </div>
+        </Layout>
       </div>
     </div>
   );

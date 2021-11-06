@@ -7,7 +7,7 @@ function Spinner() {
       <h4 style={{ textAlign: "center", width: "100%", color: "black" }}>
         Loading your favorite reads...
       </h4>
-      <div class="loader"></div>
+      <div className="loader"></div>
     </>
   );
 }
