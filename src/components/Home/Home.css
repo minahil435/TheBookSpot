@@ -1,15 +1,19 @@
 #homeMainDiv{
- display: flex;
- align-items: center;
- justify-content:center;
+  display: flex;
+  align-items: center;
+  justify-content:center;
+  background: #f7f5ec;
 }
 
 .bookGrid{
-    /* margin-top: 24px; */
-    width:69%;
+    margin-top: 24px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     gap: 24px;
-}
 
+}
+#homeMainDivWidth{
+    width:69%;
+  
+}

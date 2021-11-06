@@ -16,8 +16,10 @@ const Home = () => {
   }, []);
 
   return (
+    
     <div id="homeMainDiv">
-      <Layout>
+      <div id= "homeMainDivWidth">
+      <Layout >
         <div className="bookGrid">
           {bookData.length > 0 ? (
             bookData.map((item, index) => {
@@ -28,6 +30,7 @@ const Home = () => {
           )}
         </div>
       </Layout>
+      </div>
     </div>
   );
 };
