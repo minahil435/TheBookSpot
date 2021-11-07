@@ -9,7 +9,7 @@ function Layout({ children }) {
       <CssBaseline />
       <Box>
         <Header />
-        <Box>{children}</Box>;
+        <Box>{children}</Box>
       </Box>
     </>
   );
