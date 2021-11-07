@@ -10,7 +10,7 @@ function CartItem({ item }) {
         <Box>
           <CardMedia
             component="img"
-            sx={{ p: 1, width: "100%", height: "350px", objectFit: "cover" }}
+            sx={{ width: "100%", height: "350px", objectFit: "cover" }}
             image={item.image}
             alt={item.title}
           />
