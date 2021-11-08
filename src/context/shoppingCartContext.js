@@ -4,6 +4,7 @@ export const shoppingCartContext = createContext();
 export const useShoppingCart = () => useContext(shoppingCartContext);
 
 const ADD_TO_CART_ACTION = "ADD_TO_CART";
+const DELETE_ITEM = "DELETE_ITEM";
 
 const reducer = (oldState, action) => {
 
@@ -33,6 +34,22 @@ const reducer = (oldState, action) => {
             }
         ]
     }
+    if (action.type === DELETE_ITEM) {
+        const itemFound = oldState.find(item => item.id === action.payload.id);
+        
+        if (itemFound && itemFound.quantity > 1) {
+            return [
+                ...oldState.filter(item => item.id !== action.payload.id),
+                {
+                    ...itemFound,
+                    quantity: itemFound.quantity - 1,
+                }
+            ];
+        }
+
+        return [
+            ...oldState.filter(item => item.id !== action.payload.id)]
+    }
 };
 
 export const ShoppingCartContextProvider = ({ children }) => {
@@ -51,11 +68,22 @@ export const ShoppingCartContextProvider = ({ children }) => {
         })
     }
 
+    function deleteItemFromCart({ item }) {
+        const { id } = item
+        dispatch({
+            type: DELETE_ITEM,
+            payload: {
+                id
+            }
+        })
+    }
+
     return (
         <shoppingCartContext.Provider
             value={{
                 shoppingCart,
                 addItemToCart,
+                deleteItemFromCart
             }}
         >
             {children}

@@ -3,7 +3,11 @@ import { Card, CardMedia, IconButton, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import React from "react";
 
+import { useShoppingCart } from "../../context/shoppingCartContext";
+
+
 function CartItem({ item }) {
+  const { deleteItemFromCart } = useShoppingCart();
   return (
     <Card>
       <Box display="flex" flexDirection="column">
@@ -44,7 +48,7 @@ function CartItem({ item }) {
             </Typography>
           </Box>
           <Box display="flex" justifyContent="center" alignItems="center">
-            <IconButton aria-label="delete" onClick={() => {}}>
+            <IconButton aria-label="delete" onClick={() => deleteItemFromCart({item})}>
               <Typography fontWeight="bold" color="delete">
                 Delete Item
               </Typography>
