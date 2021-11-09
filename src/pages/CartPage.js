@@ -1,6 +1,6 @@
 import { Typography } from "@mui/material";
 import { Box } from "@mui/system";
-import React from "react";
+import React, { useState, useEffect } from "react";
 import CartItem from "../components/cartItems/CartItem";
 import Layout from "../components/layout/Layout";
 import Spinner from "../components/spinner/Spinner";
@@ -8,25 +8,39 @@ import { useShoppingCart } from "../context/shoppingCartContext";
 
 function CartPage() {
   const { shoppingCart, addItemToCart } = useShoppingCart();
+  const [price, setPrice] = useState(0);
+
+  function addsAllBookCosts() {
+    let total = 0;
+    for (const book of shoppingCart) {
+      console.log(book.quantity);
+      console.log(book.price / 100);
+      total += (book.quantity * book.price) / 100;
+    }
+    setPrice(total);
+  }
+
+  useEffect(() => {
+    addsAllBookCosts();
+  }, [shoppingCart]);
 
   return (
     <div id="homeMainDiv">
       <div id="homeMainDivWidth">
         <Layout>
           {shoppingCart.length > 0 ? (
-            <Box>
-              <Typography
-                sx={{
-                  fontWeight: "bold",
-                  textAlign: "center",
-                  mt: "18px",
-                }}
-              >
-                Total Cost:
-              </Typography>
+            <Box
+              sx={{
+                display: "flex",
+                justifyContent: "center",
+                mt: "18px",
+              }}
+            >
+              <Typography sx={{ fontWeight: "bold" }}>Total Cost: $</Typography>
+              <Typography sx={{ fontWeight: "bold" }}>{price}</Typography>
             </Box>
           ) : (
-            <h1 style={{ display: "none" }}>invisible</h1>
+            <h1 style={{ display: "none" }}>this will never be seen</h1>
           )}
           <div className="bookGrid">
             {shoppingCart.length > 0 ? (
