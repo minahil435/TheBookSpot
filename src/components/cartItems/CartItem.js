@@ -5,7 +5,6 @@ import React from "react";
 
 import { useShoppingCart } from "../../context/shoppingCartContext";
 
-
 function CartItem({ item }) {
   const { deleteItemFromCart } = useShoppingCart();
   return (
@@ -14,7 +13,7 @@ function CartItem({ item }) {
         <Box>
           <CardMedia
             component="img"
-            sx={{ width: "100%", height: "350px", objectFit: "cover" }}
+            sx={{ width: "217px", height: "350px", objectFit: "cover" }}
             image={item.image}
             alt={item.title}
           />
@@ -48,7 +47,10 @@ function CartItem({ item }) {
             </Typography>
           </Box>
           <Box display="flex" justifyContent="center" alignItems="center">
-            <IconButton aria-label="delete" onClick={() => deleteItemFromCart({item})}>
+            <IconButton
+              aria-label="delete"
+              onClick={() => deleteItemFromCart({ item })}
+            >
               <Typography fontWeight="bold" color="delete">
                 Delete Item
               </Typography>
