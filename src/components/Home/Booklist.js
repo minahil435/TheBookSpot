@@ -5,7 +5,6 @@ import { useShoppingCart } from "../../context/shoppingCartContext";
 function Booklist(props) {
   const { addItemToCart, shoppingCart } = useShoppingCart();
   const { item } = props;
-  console.log(shoppingCart);
 
   return (
     <div id="mainDiv">

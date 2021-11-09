@@ -13,8 +13,6 @@ function CartPage() {
   function addsAllBookCosts() {
     let total = 0;
     for (const book of shoppingCart) {
-      console.log(book.quantity);
-      console.log(book.price / 100);
       total += (book.quantity * book.price) / 100;
     }
     setPrice(total);
