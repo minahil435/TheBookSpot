@@ -3,11 +3,10 @@ import { Box } from "@mui/system";
 import React, { useState, useEffect } from "react";
 import CartItem from "../components/cartItems/CartItem";
 import Layout from "../components/layout/Layout";
-import Spinner from "../components/spinner/Spinner";
 import { useShoppingCart } from "../context/shoppingCartContext";
 
 function CartPage() {
-  const { shoppingCart, addItemToCart } = useShoppingCart();
+  const { shoppingCart } = useShoppingCart();
   const [price, setPrice] = useState(0);
 
   function addsAllBookCosts() {
