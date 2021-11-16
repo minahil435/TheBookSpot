@@ -64,6 +64,39 @@ const BookList = [
   },
 ];
 
+var users = [
+  {
+    id: "111",
+    email: "dusty@mail.com",
+    name: "Dustin",
+    lastName: "Hagstrom",
+    password: "password",
+    favoriteItems: ["234"],
+  },
+];
+
+export const logInUser = (email, password) =>
+  new Promise((resolve, reject) => {
+    const userFound = users.find((user) => {
+      if (user.email === email && user.password === password) {
+        return true;
+      }
+      return false;
+    });
+    console.log("fetching user data from imaginary products database");
+    setTimeout(() => {
+      try {
+        // fetching user data from imaginary database
+        if (userFound) {
+          resolve(userFound);
+        }
+        throw new Error("Incorrect username or password");
+      } catch (e) {
+        reject(e);
+      }
+    }, 1000);
+  });
+
 export const fetchProducts = () =>
   new Promise((resolve, reject) => {
     console.log("fetching Data from imaginary products database");

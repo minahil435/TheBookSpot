@@ -3,7 +3,7 @@ import "./BookList.css";
 import { useShoppingCart } from "../../context/shoppingCartContext";
 
 function Booklist(props) {
-  const { addItemToCart, shoppingCart } = useShoppingCart();
+  const { addItemToCart } = useShoppingCart();
   const { item } = props;
 
   return (

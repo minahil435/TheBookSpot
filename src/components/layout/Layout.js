@@ -7,9 +7,20 @@ function Layout({ children }) {
   return (
     <>
       <CssBaseline />
-      <Box>
-        <Header />
-        <Box>{children}</Box>
+      <Box
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          gap: "8px",
+          background: "#f7f5ec",
+          minHeight: "100vh",
+        }}
+      >
+        <Box sx={{ width: "69%" }}>
+          <Header />
+          <Box>{children}</Box>
+        </Box>
       </Box>
     </>
   );

@@ -1,11 +1,10 @@
-import { Box, fontSize } from "@mui/system";
+import { Box } from "@mui/system";
 import React from "react";
 import { AppBar, Toolbar, Typography } from "@mui/material";
 import ShoppingBagOutlinedIcon from "@mui/icons-material/ShoppingBagOutlined";
 import { IconButton } from "@mui/material";
 import { Link } from "react-router-dom";
 import { useShoppingCart } from "../../context/shoppingCartContext";
-
 
 function Header() {
   const { shoppingCart } = useShoppingCart();
@@ -32,20 +31,36 @@ function Header() {
           >
             The Book Spot
           </Typography>
-         
-          <Link to="/cart">
-            <IconButton
-                style={{ background: "white", position: 'relative' }}
-              sx={{ width: "50px", height: "50px" }}>
-              <ShoppingBagOutlinedIcon sx={{ color: (shoppingCart.length === 0) ? "black" : "red" }} fontSize="large" htmlColor="black"/>
-              <div style={{
-                position: 'absolute',
-                top: '19px',
-                fontSize: "large",
-                fontWeight:"bold"   
-              }}>{shoppingCart.length}</div>
-            </IconButton>
-          </Link>
+          <Box
+            sx={{ display: "flex", flex: 1, justifyContent: "space-around" }}
+          >
+            <Link to="/login" sx={{ TextDecoration: "none" }}>
+              <Typography color="white">Login</Typography>
+            </Link>
+
+            <Link to="/cart">
+              <IconButton
+                style={{ background: "white", position: "relative" }}
+                sx={{ width: "50px", height: "50px" }}
+              >
+                <ShoppingBagOutlinedIcon
+                  sx={{ color: shoppingCart.length === 0 ? "black" : "red" }}
+                  fontSize="large"
+                  htmlColor="black"
+                />
+                <div
+                  style={{
+                    position: "absolute",
+                    top: "19px",
+                    fontSize: "large",
+                    fontWeight: "bold",
+                  }}
+                >
+                  {shoppingCart.length}
+                </div>
+              </IconButton>
+            </Link>
+          </Box>
         </Toolbar>
       </AppBar>
     </Box>

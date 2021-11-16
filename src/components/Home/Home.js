@@ -16,24 +16,20 @@ const Home = () => {
   }, []);
 
   return (
-    <div id="homeMainDiv">
-      <div id="homeMainDivWidth">
-        <Layout>
-          <div
-            className="bookGrid"
-            style={{ marginTop: bookData.length > 0 ? "66px" : "24px" }}
-          >
-            {bookData.length > 0 ? (
-              bookData.map((item, index) => {
-                return <BookList key={item.id} item={item} index={index} />;
-              })
-            ) : (
-              <Spinner />
-            )}
-          </div>
-        </Layout>
+    <Layout>
+      <div
+        className="bookGrid"
+        style={{ marginTop: bookData.length > 0 ? "66px" : "24px" }}
+      >
+        {bookData.length > 0 ? (
+          bookData.map((item, index) => {
+            return <BookList key={item.id} item={item} index={index} />;
+          })
+        ) : (
+          <Spinner />
+        )}
       </div>
-    </div>
+    </Layout>
   );
 };
 

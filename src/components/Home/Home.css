@@ -1,8 +1,8 @@
-#homeMainDiv{
+/* #homeMainDiv{
   display: flex;
   justify-content:center;
   background: #f7f5ec;
-  min-height: 100vh; }
+  min-height: 100vh; } */
 
 .bookGrid{
     margin-top: 24px;
@@ -13,6 +13,6 @@
     gap: 24px;
 
 }
-#homeMainDivWidth{
+/* #homeMainDivWidth{
     width:69%;
-}
+} */
