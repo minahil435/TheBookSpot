@@ -3,10 +3,11 @@ import { Box } from "@mui/system";
 import React, { useState, useEffect } from "react";
 import CartItem from "../components/cartItems/CartItem";
 import Layout from "../components/layout/Layout";
-import { useShoppingCart } from "../context/shoppingCartContext";
+
+import { useSelector } from 'react-redux';
 
 function CartPage() {
-  const { shoppingCart } = useShoppingCart();
+  const shoppingCart = useSelector((state) => state);
   const [price, setPrice] = useState(0);
 
   function addsAllBookCosts() {

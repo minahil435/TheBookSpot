@@ -1,9 +1,11 @@
 import React from "react";
 import "./BookList.css";
-import { useShoppingCart } from "../../context/shoppingCartContext";
+
+import { useDispatch } from 'react-redux';
 
 function Booklist(props) {
-  const { addItemToCart, shoppingCart } = useShoppingCart();
+  
+  const dispatch = useDispatch();
   const { item } = props;
 
   return (
@@ -19,7 +21,7 @@ function Booklist(props) {
       <div id="bookName">{props.item.title}</div>
       <div id="addButton">
         <div>
-          <button id="addButtonstyle" onClick={() => addItemToCart({ item })}>
+          <button id="addButtonstyle" onClick={() => dispatch({ type: "ADD_TO_CART", payload: item })}>
             {" "}
             Add to bag -${props.item.price / 100}
           </button>

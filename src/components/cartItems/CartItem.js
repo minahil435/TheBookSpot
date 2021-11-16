@@ -3,11 +3,14 @@ import { Card, CardMedia, IconButton, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import React from "react";
 
-import { useShoppingCart } from "../../context/shoppingCartContext";
+import { useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 
 function CartItem({ item }) {
-  const { deleteItemFromCart } = useShoppingCart();
+  const dispatch = useDispatch();
+
   return (
+
     <Card>
       <Box display="flex" flexDirection="column">
         <Box>
@@ -49,7 +52,7 @@ function CartItem({ item }) {
           <Box display="flex" justifyContent="center" alignItems="center">
             <IconButton
               aria-label="delete"
-              onClick={() => deleteItemFromCart({ item })}
+              onClick={() => dispatch({ type: "DELETE_ITEM", payload: item}) }
             >
               <Typography fontWeight="bold" color="delete">
                 Delete Item
