@@ -4,10 +4,12 @@ import { AppBar, Toolbar, Typography } from "@mui/material";
 import ShoppingBagOutlinedIcon from "@mui/icons-material/ShoppingBagOutlined";
 import { IconButton } from "@mui/material";
 import { Link } from "react-router-dom";
-import { useShoppingCart } from "../../context/shoppingCartContext";
+import { useSelector } from "react-redux";
+// import { useShoppingCart } from "../../context/shoppingCartContext";
 
 function Header() {
-  const { shoppingCart } = useShoppingCart();
+  const shoppingCart = useSelector((state) => state.shoppingCart);
+
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar style={{ background: "black" }} position="static">

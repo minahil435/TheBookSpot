@@ -1,27 +1,14 @@
-import { createStore } from "redux";
+import { createStore, combineReducers } from "redux";
+import { shoppingCartReducer } from "./shoppingCartState";
+import { userReducer } from "./userState";
 
-//Actions
-const LOG_IN_ACTION = "thebookspot.com/LOG_IN";
-//Action Creators
-export const logInActionCreator = (user) => ({
-  type: LOG_IN_ACTION,
-  payload: { user },
+const rootReducer = combineReducers({
+  user: userReducer,
+  shoppingCart: shoppingCartReducer,
 });
 
-const reducer = (state, action) => {
-  if (action.type === LOG_IN_ACTION) {
-    const { payload } = action;
-
-    return { ...state, user: payload.user };
-  }
-  return state;
-};
-
-const initialState = { user: undefined };
-
 const store = createStore(
-  reducer,
-  initialState,
+  rootReducer,
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 );
 

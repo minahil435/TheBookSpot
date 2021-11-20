@@ -1,25 +1,15 @@
 import { Typography } from "@mui/material";
 import { Box } from "@mui/system";
-import React, { useState, useEffect } from "react";
+import React from "react";
+import { useSelector } from "react-redux";
 import CartItem from "../components/cartItems/CartItem";
 import Layout from "../components/layout/Layout";
-import { useShoppingCart } from "../context/shoppingCartContext";
+import { useReduxShoppingCart } from "../redux/shoppingCartState";
 
 function CartPage() {
-  const { shoppingCart } = useShoppingCart();
-  const [price, setPrice] = useState(0);
+  const { total } = useReduxShoppingCart();
 
-  function addsAllBookCosts() {
-    let total = 0;
-    for (const book of shoppingCart) {
-      total += (book.quantity * book.price) / 100;
-    }
-    setPrice(total);
-  }
-
-  useEffect(() => {
-    addsAllBookCosts();
-  }, [shoppingCart]);
+  const shoppingCart = useSelector((state) => state.shoppingCart);
 
   return (
     <Layout>
@@ -32,7 +22,7 @@ function CartPage() {
           }}
         >
           <Typography sx={{ fontWeight: "bold" }}>Total Cost: $</Typography>
-          <Typography sx={{ fontWeight: "bold" }}>{price}</Typography>
+          <Typography sx={{ fontWeight: "bold" }}>{total}</Typography>
         </Box>
       ) : (
         <h1 style={{ display: "none" }}>this will never be seen</h1>

@@ -1,9 +1,12 @@
 import React from "react";
 import "./BookList.css";
-import { useShoppingCart } from "../../context/shoppingCartContext";
+// import { useShoppingCart } from "../../context/shoppingCartContext";
+import { useReduxShoppingCart } from "../../redux/shoppingCartState";
+import { Typography } from "@mui/material";
+import { Box } from "@mui/system";
 
 function Booklist(props) {
-  const { addItemToCart } = useShoppingCart();
+  const { addItemToCart } = useReduxShoppingCart();
   const { item } = props;
 
   return (
@@ -15,13 +18,15 @@ function Booklist(props) {
           alt={props.item.title}
         />
       </div>
-      <div id="authorName">{props.item.author}</div>
-      <div id="bookName">{props.item.title}</div>
+      <div id="authorName">{item.author}</div>
+      <div id="bookName">{item.title}</div>
       <div id="addButton">
         <div>
-          <button id="addButtonstyle" onClick={() => addItemToCart({ item })}>
-            {" "}
-            Add to bag -${props.item.price / 100}
+          <button id="addButtonstyle" onClick={() => addItemToCart(item)}>
+            <Box sx={{ display: "flex" }}>
+              <Typography>Add to bag - $</Typography>
+              <Typography>{item.price / 100}</Typography>
+            </Box>
           </button>
         </div>
       </div>
